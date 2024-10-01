@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="fishMarketMenu.js"></script>
+    <style>
+        #mainDiv{
+            height: 100%;
+            width: 1500px;
+            display: inline-block;
+        }
+        #topHeader{
+            height: 80px;
+            width: 100%;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+            font-weight: bold;
+        }
+        #bodyDiv{
+            /* height: 1400px; */
+            width: 800px;
+            /* background-color: aqua; */
+            display: inline-block;
+            /* vertical-align: top; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .headers{
+            width: 600px;
+            height: 30px;
+            text-align: right;
+            padding: 30px 0px 20px;
+            /* color: white; */
+            font-size: 25px;
+        }
+        #mainBodyDiv{
+            height: 100%;
+            width: 1400px;
+            display: inline-block;
+           
+        }
+        .lunchInfo{
+            width: 560px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: tops;
+            padding-left: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #e6e6e6;
+            /* border-right:1px solid #e6e6e6 ; */
+        }
+        .dinnerInfo{
+            width: 562px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: tops;
+            padding-left: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #e6e6e6;
+        }
+        .shrimpLoverInfo{
+            width: 560px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: tops;
+            padding-left: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #e6e6e6;
+        }
+        .familyDinnerInfo{
+            width: 560px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: tops;
+            padding-left: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #e6e6e6;
+        }
+        .infoMenuDiv{
+            width: 570px;
+            height: 20px;
+            /* background-color: aqua; */
+            display: inline-block;
+            padding-left: 40px;
+            font-size: 18px;
+            /* border: 1px solid #e6e6e6; */
+            border-radius: 3px;
+            /* display: flex; */
+            cursor: pointer;
+            /* transition: box-shadow .3s, border-color .3s, transform .3s; */
+            text-decoration: none; color: black;
+        }
+        .priceMenuDiv{
+            width: 100px;
+            height: 20px;
+            /* background-color: blueviolet; */
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 20PX;
+            cursor: pointer;
+        }
+        .infoBoxDiv{
+            height: 20px;
+            width: 760px;
+            display: inline-block;
+            /* transition: box-shadow .3s, border-color .3s, transform .3s; */
+        }
+        #bodyDiv2{
+            height: 1400px;
+            width: 590px;
+            /* background-color: aqua; */
+            display: inline-block;
+            vertical-align: top;
+        }
+        #rightSidediv{
+            height: 300px;
+            width: 590px;
+            /* background-color: aquamarine; */
+        }
+        .modalBox{
+            height: 1300px;
+            width: 800px;
+            /* background-color: aquamarine; */
+        }
+        .modalContent{
+            height: 1200px;
+            width: 420px;
+            /* background-color: blueviolet; */
+            display: inline-block;
+            border-radius: 10px; /* affects the corner of the box */
+            border-inline-color: black;
+            
+        }
+        .modalHeader{
+            width: 420px;
+            height: 40px;
+            /* background-color: yellow; */
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 30px;
+        }
+        .modalPrice{
+            width: 420px;
+            height: 40px;
+            /* background-color: rgb(255, 0, 174); */
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+        }
+        .modalSideOrder{
+            width: 420px;
+            height: 40px;
+            /* background-color: orange; */
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+        }
+        .modalDropdown1{
+            width: 420px;
+            height: 40px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+            text-align: center;
+            
+        }
+        .modalInput1{
+            width: 420px;
+            height: 120px;
+            padding-top: 10px;
+            text-align: center;
+            /* background-color: orange; */
+        }
+        .modalQuantity{
+            width: 420px;
+            height: 40px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 10px;
+            text-align: center;
+            /* background-color:  pink; */
+        }
+        .selectDropdownDiv{
+            width: 420px;
+            height: 40px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            /* padding-top: 10px; */
+            text-align: center;
+            /* background-color: aqua; */
+        }
+        #orderDivBox{
+            width: 400px;
+            height: 260px;
+            background-color: whitesmoke;
+            border-radius: 1px solid;
+            padding-top: 40px;
+        }
+        #orderInfoBox{
+            /* height: 40px; */
+            width: 380px;
+            background-color: whitesmoke;
+            text-align: center;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #deliveryInfoBox{
+            height: 40px;
+            width: 160px;
+            display: inline-block;
+            padding-top: 5px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #takeoutInfoBox{
+            height: 40px;
+            width: 160px;
+            display: inline-block;
+            padding-top: 5px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .orderHeader{
+            height: 30px;
+            width: 380px;
+            background-color: whitesmoke;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        #orderButtonDiv{
+            height: 30px;
+            width: 380px;
+            background-color: whitesmoke;
+            text-align: center;
+            padding-top: 10px;
+        }
+        #orderInputDiv{
+            height: 30px;
+            width: 380px;
+            
+            text-align: center;
+        }
+        
+    </style>
+    
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="topHeader">   
+            MENU
+        </div>
+        <div id="mainBodyDiv">
+            <div id="bodyDiv">
+                <div class="headers">
+                    LUNCH SPECIAL
+                </div>
+                <div class="lunchInfo" type="text" value="bt1" onclick="pickedFood()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+
+                        <a>1. RED SNAPPER LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <br style="border-radius: 5px;">
+                <div class="lunchInfo" type="text" value="bt1" onclick="pickedFood2()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>2. CATFISH FILLET LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood3()" id="food">3. SOLE FILLET LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood4()" id="food"> 4. CATFISH STEAK LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood5()" id="food">5. SANDAB LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood6()" id="food">6. TILAPIA LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood7()" id="food">7. WHITTING FILLET LUNCH (3PC AND 1 SIDE)</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $10.99
+                        </div>
+                    </div>
+                </div>
+
+                <div class="headers">
+                    COMBO LUNCH 
+                </div>
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood8()" id="food">8. 2PC FISH & 6 MED SHRIMP AND ONE SIDE ORDER</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $12.99
+                        </div>
+                    </div>
+                </div>  
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood9()" id="food">9. 3PC FISH & 10 MED SHRIMP AND ONE SIDE ORDER</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $17.99
+                        </div>
+                    </div>
+                </div>  
+                <div class="lunchInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a type="text" value="bt1" onclick="pickedFood10()" id="food">10. 4PC FISH & 13 MED SHRIMP AND ONE SIDE ORDER</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $22.99
+                        </div>
+                    </div>
+                </div>
+                <div class="headers">
+                    DINNER
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>1. 5PC RED SNAPPER AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner1()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>2. 7PC RED SNAPPER AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $18.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner2()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>3. 10PC RED SNAPPER AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $24.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner3()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>4. 5PC CATFISH FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $15.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner4()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>5. 7PC CATFISH FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $19.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner5()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>6. 10PC CATFISH FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $25.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner6()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>7. 5PC SOLE FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="pickedDinner7()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>8. 5PC SANDAB AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner8()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>9. 7PC TILAPIA FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner9()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>10. 5PC WHITTING FILLET AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner10()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>11. 5PC CATFISH STEAK AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $15.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner11()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>12. PERCH DINNER AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner12()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>13. JAR OF PACIFIC OYSTERS AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner13()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>14. SCALLOPPS(5PC) AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $15.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="pickedDinner14()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>15. L.A. OYSTERS AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $17.99
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="headers">
+                    COMBO DINNER
+                </div>
+                <div class="dinnerInfo"  type="text" value="bt1" onclick="comboDinner1()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>2PC FISH & 2 SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $11.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner2()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>2PC FISH, 2PC SHRIMP & 2 OYSTERS AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $13.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner3()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>3PC FISH, 3PC SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $13.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner4()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>3PC FISH, 3PC SHRIMP & 3 OYSTERS AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $20.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner5()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>4PC FISH, 4PC SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $19.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner6()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>5PC FISH, 5PC SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $20.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner7()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>8PC FISH, 8PC SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $35.99
+                        </div>
+                    </div>
+                </div><div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner8()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>10PC FISH, 10PC SHRIMP AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $40.99
+                        </div>
+                    </div>
+                </div>
+                <div class="dinnerInfo" type="text" value="bt1" onclick="comboDinner9()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>OYSTER COMBO(JAR OF OYSTERS & 4PC FISH OR 
+                                4 JUMBO SHRIMP) AND TWO SIDE ORDERS</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $23.99
+                        </div>
+                    </div>
+                </div>
+                <div class="headers">
+                    SHRIMP LOVERS
+                </div>
+                <div class="shrimpLoverInfo"  type="text" value="bt1" onclick="shrimpCombo1()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>10 PC MED SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $11.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="shrimpCombo2()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>15 PC MED SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="shrimpCombo3()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>25 PC MED SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $25.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="shrimpCombo4()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>50 PC MED SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $39.99
+                        </div>
+                    </div>
+                </div>
+                <div class="headers">
+                    SHRIMP ONLY (MEDIUM SIZE)
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="shrimpOnly1()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>10 PC MED SHRIMP ONLY</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $11.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="comboDinner9()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>20 PC MED SHRIMP ONLY</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $14.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="comboDinner9()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>30 PC MED SHRIMP ONLY</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $35.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="comboDinner9()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>40 PC MED SHRIMP ONLY</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $40.99
+                        </div>
+                    </div>
+                </div>
+                <div class="headers">
+                    JUMBO SHRIMP WITH FRIES
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="jumboShrimp1()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>10 JUMBO SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $17.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="jumboShrimp2()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>16 JUMBO SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $27.99
+                        </div>
+                    </div>
+                </div>
+                <div class="shrimpLoverInfo" type="text" value="bt1" onclick="jumboShrimp3()" id="food">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>20 JUMBO SHRIMP WITH FRIES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $33.99
+                        </div>
+                    </div>
+                </div>
+                <div class="headers">
+                    FAMILY DINNERS
+                </div>
+                <div class="familyDinnerInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>8 PC RED SNAPPER, 8 PC SOLE F, 20 PC MEDIUM SHRIMP , TWO SIDES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $33.99
+                        </div>
+                    </div>
+                </div>
+                <div class="familyDinnerInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>8 PC RED SNAPPER, 8 PC CAT FILLET, 20 PC MEDIUM SHRIMP , TWO SIDES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $33.99
+                        </div>
+                    </div>
+                </div>
+                <div class="familyDinnerInfo">
+                    <div class="infoBoxDiv">
+                        <div class="infoMenuDiv">
+                            <a>16 PC CAT FILLET, 20 PC MEDIUM SHRIMP , TWO SIDES</a>
+                        </div>
+                        <div class="priceMenuDiv">
+                            $33.99
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bodyDiv2">
+                <div id="rightSidediv">
+                    <div id="orderDivBox">
+                        <div class="orderHeader">
+                            Order Food
+                        </div>
+                        <div id="orderInfoBox">
+                            <div id="deliveryInfoBox">
+                                <input type="radio" name="" value="" checked="">
+                                <span>Delivery</span>
+                            </div>
+                            <div id="takeoutInfoBox">
+                                <input type="radio" name="" value="" checked="">
+                                <span>Takeout</span>
+                            </div>
+                        </div>
+                        <div class="orderHeader">
+                           Delivery Address
+                        </div>
+                        <div id="orderInputDiv">
+                            <input href="https://maps.google.com" style="width: 200px; height: 25px;">
+                        </div>
+                        <!-- <div id="orderButtonDiv">
+                            <button type="submit" value="submit" onclick="">Start Order</button>
+                            
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modalBox">
+                    <div class="modalContent">
+                        <div class="modalHeader">
+                            <a id="output1"></a>
+                           
+                        </div>
+                        
+                        <div class="modalPrice">
+                            <a id="output2"></a>
+                        </div>
+                        <div class="modalSideOrder">
+                            <a id="output3"></a>
+                        </div>
+                        <div class="modalDropdown1">
+                            <!-- <select style="width: 200px;">Pick a side</select> -->
+                            <select id="selectSide" onchange="companySelected(this)" style="border-radius: 5px; font-size: 25px;">
+                                <option value="">(Select A side Order)</option>
+                                <option value="">French Fries</option>
+                                <option value="">Potato Salad</option>
+                                <option value="">Cole Slaw</option>
+                                <option value="">Hush Puppies</option>
+                                <option value="">Maccaroni Salad</option>
+                            </select>
+                        </div>
+                        <div class="modalQuantity">
+                            Quantity
+                        </div>
+                        <div class="selectDropdownDiv">
+                            <select style="border-radius: 5px; font-size: 25px;">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
+                        <div class="modalInput1">
+                            <!-- <input type="text" style="width: 300px; height:100px;"> -->
+                            <textarea style="width: 300px; height: 100px;" placeholder="Example: napkins, fork, hotsauce"></textarea>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
